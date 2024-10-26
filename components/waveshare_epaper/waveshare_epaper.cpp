@@ -2473,9 +2473,9 @@ void HOT WaveshareEPaper7P5InV2::display() {
   // COMMAND DATA START TRANSMISSION NEW DATA
   this->command(0x13);
   delay(2);
-  for (uint32_t i = 0; i < buf_len; i++) {
-    this->data(~(this->buffer_[i]));
-  }
+  this->start_data_();
+  this->write_array(this->buffer_, buf_len);
+  this->end_data_();
 
   delay(100);  // NOLINT
   this->wait_until_idle_();
@@ -2489,6 +2489,20 @@ void HOT WaveshareEPaper7P5InV2::display() {
   this->command(0x02);
   this->wait_until_idle_();
   ESP_LOGV(TAG, "After command(0x02) (>> power off)");
+}
+
+void WaveshareEPaper7P5InV2::draw_absolute_pixel_internal(int x, int y, Color color) {
+  if (x >= this->get_width_internal() || y >= this->get_height_internal() || x < 0 || y < 0)
+    return;
+
+  const uint32_t pos = (x + y * this->get_width_controller()) / 8u;
+  const uint8_t subpos = x & 0x07;
+  // flip logic
+  if (!color.is_on()) {
+    this->buffer_[pos] &= ~(0x80 >> subpos);
+  } else {
+    this->buffer_[pos] |= 0x80 >> subpos;
+  }
 }
 
 int WaveshareEPaper7P5InV2::get_width_internal() { return 800; }
