@@ -52,7 +52,7 @@ void GoodDisplayGDEY075Z08::update_(RefreshMode mode) {
   const uint32_t buf_half_len = this->get_buffer_length_() / 2u;
 
   if (mode == PARTIAL_REFRESH) {
-	  uint32_t x_start = 0, y_start = 0, x_end, y_end;
+    uint32_t x_start = 0, y_start = 0, x_end, y_end;
     x_end = x_start + this->get_width_internal() - 1; 
     y_end = y_start + this->get_height_internal() - 1;
 
