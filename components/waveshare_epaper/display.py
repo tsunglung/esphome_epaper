@@ -58,7 +58,9 @@ GDEY029T94 = waveshare_epaper_ns.class_("GDEY029T94", WaveshareEPaper)
 GoodDisplayGDEY075Z08 = waveshare_epaper_ns.class_(
     "GoodDisplayGDEY075Z08", WaveshareEPaper
 )
-
+GoodDisplayGDEM075F52 = waveshare_epaper_ns.class_(
+    "GoodDisplayGDEM075F52", WaveshareEPaper
+)
 WaveshareEPaper2P9InDKE = waveshare_epaper_ns.class_(
     "WaveshareEPaper2P9InDKE", WaveshareEPaper
 )
@@ -142,6 +144,7 @@ MODELS = {
     "2.90inv2": ("a", WaveshareEPaperTypeAModel.WAVESHARE_EPAPER_2_9_IN_V2),
     "gdew029t5": ("c", GDEW029T5),
     "7.5in-gooddisplay": ("c", GoodDisplayGDEY075Z08),
+    "7.5in-w21-gooddisplay": ("c", GoodDisplayGDEM075F52),
     "2.70in": ("b", WaveshareEPaper2P7In),
     "2.70in-b": ("b", WaveshareEPaper2P7InB),
     "2.70in-bv2": ("b", WaveshareEPaper2P7InBV2),
