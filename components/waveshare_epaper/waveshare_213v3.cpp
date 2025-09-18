@@ -175,12 +175,12 @@ int WaveshareEPaper2P13InV3::get_height_internal() { return 250; }
 uint32_t WaveshareEPaper2P13InV3::idle_timeout_() { return 5000; }
 
 void WaveshareEPaper2P13InV3::dump_config() {
-  LOG_DISPLAY("", "Waveshare E-Paper", this)
+  LOG_DISPLAY("", "Waveshare E-Paper", this);
   ESP_LOGCONFIG(TAG, "  Model: 2.13inV3");
-  LOG_PIN("  CS Pin: ", this->cs_)
-  LOG_PIN("  Reset Pin: ", this->reset_pin_)
-  LOG_PIN("  DC Pin: ", this->dc_pin_)
-  LOG_PIN("  Busy Pin: ", this->busy_pin_)
+  LOG_PIN("  CS Pin: ", this->cs_);
+  LOG_PIN("  Reset Pin: ", this->reset_pin_);
+  LOG_PIN("  DC Pin: ", this->dc_pin_);
+  LOG_PIN("  Busy Pin: ", this->busy_pin_);
   LOG_UPDATE_INTERVAL(this);
 }
 

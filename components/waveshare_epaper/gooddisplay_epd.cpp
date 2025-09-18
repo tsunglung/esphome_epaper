@@ -242,12 +242,12 @@ void GoodDisplayGDEY075Z08::fill(Color color) {
 }
 
 void GoodDisplayGDEY075Z08::dump_config() {
-  LOG_DISPLAY("", "GoodDisplay e-Paper", this)
+  LOG_DISPLAY("", "GoodDisplay e-Paper", this);
   ESP_LOGCONFIG(TAG, "  Model: GDEY075Z08");
-  LOG_PIN("  CS Pin: ", this->cs_)
-  LOG_PIN("  Reset Pin: ", this->reset_pin_)
-  LOG_PIN("  DC Pin: ", this->dc_pin_)
-  LOG_PIN("  Busy Pin: ", this->busy_pin_)
+  LOG_PIN("  CS Pin: ", this->cs_);
+  LOG_PIN("  Reset Pin: ", this->reset_pin_);
+  LOG_PIN("  DC Pin: ", this->dc_pin_);
+  LOG_PIN("  Busy Pin: ", this->busy_pin_);
   LOG_UPDATE_INTERVAL(this);
   ESP_LOGCONFIG(TAG, "  SPI Data rate: %dMHz", (unsigned) (this->data_rate_ / 1000000));
   ESP_LOGCONFIG(TAG, "  SPI Mode: %d", this->mode_);
