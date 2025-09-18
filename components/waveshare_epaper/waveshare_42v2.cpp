@@ -388,10 +388,10 @@ void WaveshareEPaper4P2InV2::dump_config() {
     ESP_LOGCONFIG(TAG, "  Initial Mode: 4 Grayscale");
   else if (this->initial_mode_ == MODE_FAST)
     ESP_LOGCONFIG(TAG, "  Initial Mode: Fast");
-  LOG_PIN("  CS Pin: ", this->cs_)
-  LOG_PIN("  Reset Pin: ", this->reset_pin_)
-  LOG_PIN("  DC Pin: ", this->dc_pin_)
-  LOG_PIN("  Busy Pin: ", this->busy_pin_)
+  LOG_PIN("  CS Pin: ", this->cs_);
+  LOG_PIN("  Reset Pin: ", this->reset_pin_);
+  LOG_PIN("  DC Pin: ", this->dc_pin_);
+  LOG_PIN("  Busy Pin: ", this->busy_pin_);
   LOG_UPDATE_INTERVAL(this);
 }
 
